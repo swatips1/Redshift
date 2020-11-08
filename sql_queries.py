@@ -23,21 +23,21 @@ staging_events_table_create= ("""
     create table if not exists events_staging (
         se_id integer IDENTITY(0,1),--?
         artist text,
-        auth varchar not null,
+        auth varchar,
         first_name varchar,
         gender char (1),
-        item_in_session int not null,
+        item_in_session int,
         last_name varchar,
         length numeric,
-        level varchar not null,
+        level varchar,
         location varchar,
-        method varchar not null,
-        page varchar not null,
+        method varchar,
+        page varchar,
         registration numeric,
-        session_id int not null,
+        session_id int,
         song varchar,
-        status int not null,
-        ts numeric not null,
+        status int,
+        ts numeric,
         user_agent varchar,
         user_id int
     )
@@ -46,16 +46,16 @@ staging_events_table_create= ("""
 staging_songs_table_create = ("""
     create table if not exists songs_staging (
         se_id integer IDENTITY(0,1),--?
-        num_songs int not null,
-        artist_id varchar not null,
+        num_songs int,
+        artist_id varchar,
         artist_latitude varchar,
         artist_longitude varchar,
         artist_location varchar,
-        artist_name varchar not null,
-        song_id varchar not null,
-        title varchar not null,
-        duration numeric not null,
-        year int not null
+        artist_name varchar,
+        song_id varchar,
+        title varchar,
+        duration numeric,
+        year int
     )
 """)
 
