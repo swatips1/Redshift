@@ -5,6 +5,13 @@ import configparser
 import psycopg2
 from sql_queries import copy_table_queries, insert_table_queries
 
+"""Load data into staging tables
+
+Keyword arguments:
+cur: Already established cursor object.
+conn: Already established connection object.
+
+"""
 
 def load_staging_tables(cur, conn):
     for query in copy_table_queries:
@@ -12,7 +19,13 @@ def load_staging_tables(cur, conn):
         cur.execute(query)
         conn.commit()
 
+"""Load data from staging tables to the final tables. 
 
+Keyword arguments:
+cur: Already established cursor object.
+conn: Already established connection object.
+
+"""
 def insert_tables(cur, conn):
     for query in insert_table_queries:
         print(query)
@@ -20,6 +33,12 @@ def insert_tables(cur, conn):
         conn.commit()
 
 
+"""Entry point.
+Loads and parses configuration file.
+Establishes a connection with the database and aquires a cursor.
+Calls function to load data into staging table and then into final tables.
+Closes connections. 
+"""
 def main():
     config = configparser.ConfigParser()
     config.read('dwh.cfg')
