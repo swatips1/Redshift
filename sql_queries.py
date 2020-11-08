@@ -45,7 +45,7 @@ staging_events_table_create= ("""
 
 staging_songs_table_create = ("""
     create table if not exists songs_staging (
-        se_id integer IDENTITY(0,1),--?
+        se_id integer IDENTITY(0,1),
         num_songs int,
         artist_id varchar,
         artist_latitude varchar,
@@ -61,7 +61,7 @@ staging_songs_table_create = ("""
 
 songplay_table_create = ("""
     create table if not exists songplays (
-        --songplay_id int identity(0, 1) primary key,
+        songplay_id int identity(0, 1) primary key,
         start_time timestamp not null,
         user_id int not null,
         level varchar not null,
@@ -69,8 +69,7 @@ songplay_table_create = ("""
         artist_id varchar,
         session_id int not null,
         location varchar,
-        user_agent varchar not null,
-        PRIMARY KEY (song_id, artist_id, start_time)
+        user_agent varchar not null
     )
 """)
 
