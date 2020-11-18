@@ -7,11 +7,10 @@ The details of contents of this project are as below:
     LOG_DATA='s3://udacity-dend/log_data'
     LOG_JSONPATH='s3://udacity-dend/log_json_path.json'
     SONG_DATA='s3://udacity-dend/song_data'
-2) sql_queries.py: This is a central place for all database queries needed for data processing, including creating and dropping tables and all queries needed for data manipulation.    
-3) sql_queries.py: This is a central place for all database queries needed for data processing, including creating and dropping tables and all queries needed for data manipulation.
-4) create_tables.py: This has the code for creating databases and tables. The main function re-creates database and tables. It uses sql_queries.py to drop and create required tables. 
-5) etl.py: This is where the data is read from the S3 bucket into the staging tables and then from staging tables into the main tables.  
-6) test.ipynb: Provides the developer an easy way to Calls create_tables.py and  etl.py and observe the results of each operation.
+2) sql_queries.py: This is a central place for all database queries needed for data processing, including creating and dropping tables and all queries needed for data manipulation.
+3) create_tables.py: This has the code for creating databases and tables. The main function re-creates database and tables. It uses sql_queries.py to drop and create required tables. 
+4) etl.py: This is where the data is read from the S3 bucket into the staging tables and then from staging tables into the main tables.  
+5) test.ipynb: Provides the developer an easy way to Calls create_tables.py and  etl.py and observe the results of each operation.
 
 The DB Schema consists of the following:
 1) Staging tables:
